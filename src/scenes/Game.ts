@@ -9,7 +9,7 @@ export default class Game extends Phaser.Scene
 
     preload()
     {
-        this.load.atlas('zombie', 'assets/zombie-male-idle.png', 'assets/zombie-male-idle.json');
+        this.load.atlas('zombie', 'assets/zombie-male.png', 'assets/zombie-male.json');
         
         this.load.image('tiles' , 'assets/graveyard-spritesheet.png');
         this.load.tilemapTiledJSON('tilemap' , 'assets/graveyard-map.json');

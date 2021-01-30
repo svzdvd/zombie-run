@@ -1,7 +1,7 @@
 {"frames": [
 
 {
-	"filename": "Bone (1).png",
+	"filename": "Tile (1).png",
 	"frame": {"x":0,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
@@ -9,7 +9,7 @@
 	"sourceSize": {"w":128,"h":128}
 },
 {
-	"filename": "Bone (2).png",
+	"filename": "Tile (2).png",
 	"frame": {"x":128,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
@@ -17,40 +17,8 @@
 	"sourceSize": {"w":128,"h":128}
 },
 {
-	"filename": "Bone (3).png",
-	"frame": {"x":0,"y":128,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128}
-},
-{
-	"filename": "Bone (4).png",
-	"frame": {"x":128,"y":128,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128}
-},
-{
-	"filename": "Tile (1).png",
-	"frame": {"x":0,"y":256,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128}
-},
-{
-	"filename": "Tile (2).png",
-	"frame": {"x":128,"y":256,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128}
-},
-{
 	"filename": "Tile (3).png",
-	"frame": {"x":0,"y":384,"w":128,"h":128},
+	"frame": {"x":256,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -58,7 +26,7 @@
 },
 {
 	"filename": "Tile (4).png",
-	"frame": {"x":128,"y":384,"w":128,"h":128},
+	"frame": {"x":384,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -66,7 +34,7 @@
 },
 {
 	"filename": "Tile (5).png",
-	"frame": {"x":0,"y":512,"w":128,"h":128},
+	"frame": {"x":512,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -74,7 +42,7 @@
 },
 {
 	"filename": "Tile (6).png",
-	"frame": {"x":128,"y":512,"w":128,"h":128},
+	"frame": {"x":640,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -82,7 +50,7 @@
 },
 {
 	"filename": "Tile (7).png",
-	"frame": {"x":0,"y":640,"w":128,"h":128},
+	"frame": {"x":768,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -90,7 +58,7 @@
 },
 {
 	"filename": "Tile (8).png",
-	"frame": {"x":128,"y":640,"w":128,"h":128},
+	"frame": {"x":896,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -98,7 +66,7 @@
 },
 {
 	"filename": "Tile (9).png",
-	"frame": {"x":0,"y":768,"w":128,"h":128},
+	"frame": {"x":1024,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -106,7 +74,7 @@
 },
 {
 	"filename": "Tile (10).png",
-	"frame": {"x":128,"y":768,"w":128,"h":128},
+	"frame": {"x":1152,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -114,7 +82,7 @@
 },
 {
 	"filename": "Tile (11).png",
-	"frame": {"x":0,"y":896,"w":128,"h":128},
+	"frame": {"x":1280,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -122,7 +90,7 @@
 },
 {
 	"filename": "Tile (12).png",
-	"frame": {"x":128,"y":896,"w":128,"h":128},
+	"frame": {"x":1408,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -130,7 +98,7 @@
 },
 {
 	"filename": "Tile (13).png",
-	"frame": {"x":0,"y":1024,"w":128,"h":128},
+	"frame": {"x":1536,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -138,7 +106,7 @@
 },
 {
 	"filename": "Tile (14).png",
-	"frame": {"x":128,"y":1024,"w":128,"h":128},
+	"frame": {"x":1664,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -146,7 +114,7 @@
 },
 {
 	"filename": "Tile (15).png",
-	"frame": {"x":0,"y":1152,"w":128,"h":128},
+	"frame": {"x":1792,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -154,7 +122,7 @@
 },
 {
 	"filename": "Tile (16).png",
-	"frame": {"x":128,"y":1152,"w":128,"h":128},
+	"frame": {"x":1920,"y":0,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -165,8 +133,8 @@
 	"version": "1.0",
 	"image": "graveyard-spritesheet.png",
 	"format": "RGBA8888",
-	"size": {"w":256,"h":1280},
+	"size": {"w":2048,"h":128},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:dac88d3081ea1f859adbb5777481698f:c78d69cd42025bd07c44f5cbd60ac173:e09bd019b1f2a498d64d64c2d719148a$"
+	"smartupdate": "$TexturePacker:SmartUpdate:34064641047566ff488d818b445741e7:b914625eeb0f8bcee4fd90d3a1d1c1a5:e09bd019b1f2a498d64d64c2d719148a$"
 }
 }
