@@ -127,6 +127,8 @@ Change 8000 to whatever you want.
 
 ## Other Notes
 
+https://github.com/ourcade/phaser3-typescript-parcel-template
+
 [parcel-plugin-clean-easy](https://github.com/lifuzhao100/parcel-plugin-clean-easy) is used to ensure only the latest files are in the `dist` folder. You can modify this behavior by changing `parcelCleanPaths` in `package.json`.
 
 [parcel-plugin-static-files](https://github.com/elwin013/parcel-plugin-static-files-copy#readme) is used to copy static files from `public` into the output directory and serve it. You can add additional paths by modifying `staticFiles` in `package.json`.
