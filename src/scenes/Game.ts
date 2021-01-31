@@ -1,11 +1,21 @@
 import Phaser from 'phaser'
+import PlayerController from './PlayerController';
 
 export default class Game extends Phaser.Scene
 {
+    private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+    private playerSprite?: Phaser.Physics.Matter.Sprite;
+    private playerController?: PlayerController;
+
 	constructor()
 	{
 		super('game')
 	}
+
+    init()
+    {
+        this.cursors = this.input.keyboard.createCursorKeys(); 
+    }
 
     preload()
     {
@@ -33,29 +43,22 @@ export default class Game extends Phaser.Scene
             {
                 case 'player':
                 {
-                    const player = this.matter.add.sprite(x + (width * 0.5), y - 200, 'zombie')
+                    this.playerSprite = this.matter.add.sprite(x + (width * 0.5), y - 200, 'zombie')
                         .setFixedRotation();
-                    player.setData('type', 'zombie'); 
-                    
-                    player.anims.create({
-                        key: 'player-idle',
-                        frameRate: 10,
-                        frames: player.anims.generateFrameNames('zombie', {
-                            start: 1, 
-                            end: 15,
-                            prefix: 'Idle (',
-                            suffix: ').png'
-                        }),
-                        repeat: -1
-                    });
-
-                    // this.playerController = new PlayerController(this, this.penguin, this.cursors, this.obstacles);        
-                    player.setVelocityX(0);
-                    player.play('player-idle');
-                    this.cameras.main.startFollow(player, true);
-                    break;
+                    this.playerSprite.setData('type', 'zombie');                        
+                    this.playerController = new PlayerController(this, this.playerSprite, this.cursors);        
+                    this.cameras.main.startFollow(this.playerSprite, true);
+                    break;                    
                 }
             }
         });     
+    }
+
+    update(time: number, deltaTime: number)
+    {
+        if (this.playerController) 
+        {
+            this.playerController.update(deltaTime);
+        }
     }
 }
