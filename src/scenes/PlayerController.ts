@@ -42,6 +42,23 @@ export default class PlayerController
                 onUpdate: this.jumpOnUpdate
             })
             .setState('idle');
+
+        this.sprite.setOnCollide((data: MatterJS.ICollisionPair) => {
+            const body = (this.isPlayerBody(data.bodyA) ? data.bodyB : data.bodyA)  as MatterJS.BodyType;
+            const gameObject = body.gameObject;
+            if (!gameObject) 
+            {
+                return;
+            }
+    
+            if (gameObject instanceof Phaser.Physics.Matter.TileBody) 
+            {
+                if (this.stateMachine.isCurrentState('jump'))
+                {
+                    this.stateMachine.setState('idle');
+                }
+            }
+        });
     }
 
     update(deltaTime: number)
@@ -100,6 +117,7 @@ export default class PlayerController
 
     private jumpOnEnter() 
     {
+        this.sprite.play('player-jump');
         this.sprite.setVelocityY(-this.jumpSpeed);
     }
 
@@ -115,6 +133,17 @@ export default class PlayerController
             this.sprite.flipX = false;            
             this.sprite.setVelocityX(this.speed);
         }
+    }
+
+    private isPlayerBody(body: MatterJS.Body)
+    {
+        const gameObject = (body as MatterJS.BodyType).gameObject;
+        if (gameObject instanceof Phaser.Physics.Matter.Sprite)
+        {
+            const type = gameObject.getData('type');
+            return type === 'player';
+        }
+        return false;
     }
 
     private createAnimations()
@@ -142,5 +171,17 @@ export default class PlayerController
             }),
             repeat: -1
         });
+
+        this.sprite.anims.create({
+            key: 'player-jump',
+            frameRate: 5,
+            frames: this.sprite.anims.generateFrameNames('zombie', {
+                start: 2, 
+                end: 4,
+                prefix: 'Walk (',
+                suffix: ').png'
+            }),
+            repeat: 0
+        });        
     }
 }
