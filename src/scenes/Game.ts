@@ -44,9 +44,9 @@ export default class Game extends Phaser.Scene
                 case 'player':
                 {
                     this.playerSprite = this.matter.add.sprite(x + (width * 0.5), y - 200, 'zombie')
-                        .setFixedRotation();
-                    this.playerSprite.setScale(0.50);
-                    this.playerSprite.setData('type', 'player');                        
+                        .setData('type', 'player')
+                        .setScale(0.50)
+                        .setFixedRotation();            
                     this.playerController = new PlayerController(this, this.playerSprite, this.cursors);        
                     this.cameras.main.startFollow(this.playerSprite, true);
                     break;                    
