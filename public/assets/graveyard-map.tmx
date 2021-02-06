@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="128" tileheight="128" infinite="0" nextlayerid="3" nextobjectid="2">
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="128" tileheight="128" infinite="0" nextlayerid="3" nextobjectid="4">
  <tileset firstgid="1" name="graveyard-spritesheet" tilewidth="128" tileheight="128" tilecount="16" columns="16">
   <image source="graveyard-spritesheet.png" width="2048" height="128"/>
   <tile id="0">
@@ -106,6 +106,8 @@
 </data>
  </layer>
  <objectgroup id="2" name="objects">
-  <object id="1" name="player" x="128" y="1408" width="128" height="128"/>
+  <object id="1" name="purpledevil" x="1404" y="1404" width="128" height="128"/>
+  <object id="2" name="player" x="128" y="1398" width="128" height="128"/>
+  <object id="3" name="slug" x="768" y="1406" width="128" height="128"/>
  </objectgroup>
 </map>

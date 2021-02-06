@@ -28,13 +28,35 @@
                 {
                  "height":128,
                  "id":1,
+                 "name":"purpledevil",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":1404,
+                 "y":1404
+                }, 
+                {
+                 "height":128,
+                 "id":2,
                  "name":"player",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":128,
                  "x":128,
-                 "y":1408
+                 "y":1398
+                }, 
+                {
+                 "height":128,
+                 "id":3,
+                 "name":"slug",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":768,
+                 "y":1406
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -43,7 +65,7 @@
          "y":0
         }],
  "nextlayerid":3,
- "nextobjectid":2,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",

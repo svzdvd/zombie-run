@@ -1,0 +1,68 @@
+{"frames": [
+
+{
+	"filename": "monster02_idle_1.png",
+	"frame": {"x":1,"y":1,"w":222,"h":254},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":1,"w":222,"h":254},
+	"sourceSize": {"w":256,"h":256}
+},
+{
+	"filename": "monster02_idle_2.png",
+	"frame": {"x":1,"y":513,"w":222,"h":249},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":6,"w":222,"h":249},
+	"sourceSize": {"w":256,"h":256}
+},
+{
+	"filename": "monster02_idle_3.png",
+	"frame": {"x":1,"y":257,"w":222,"h":254},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":1,"w":222,"h":254},
+	"sourceSize": {"w":256,"h":256}
+},
+{
+	"filename": "monster02_walk_left_1.png",
+	"frame": {"x":1,"y":1017,"w":219,"h":250},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":2,"w":219,"h":250},
+	"sourceSize": {"w":256,"h":256}
+},
+{
+	"filename": "monster02_walk_left_2.png",
+	"frame": {"x":1,"y":1269,"w":218,"h":245},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":6,"w":218,"h":245},
+	"sourceSize": {"w":256,"h":256}
+},
+{
+	"filename": "monster02_walk_right_1.png",
+	"frame": {"x":1,"y":764,"w":221,"h":251},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":1,"w":221,"h":251},
+	"sourceSize": {"w":256,"h":256}
+},
+{
+	"filename": "monster02_walk_right_2.png",
+	"frame": {"x":1,"y":1516,"w":218,"h":245},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":6,"w":218,"h":245},
+	"sourceSize": {"w":256,"h":256}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "purpledevil.png",
+	"format": "RGBA8888",
+	"size": {"w":224,"h":1762},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e62406af48c33546118f7fff55a35733:eeb2894d185274f8fefd9bbdd929fb04:f1afe1076f4c7403452431be89f68acc$"
+}
+}
