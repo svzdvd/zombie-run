@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import PlayerController from './PlayerController';
 import ObstaclesController from './ObstaclesController';
 import SlugController from './SlugController';
+import PurpleDevilController from './PurpleDevilController';
 
 export default class Game extends Phaser.Scene
 {
@@ -10,7 +11,8 @@ export default class Game extends Phaser.Scene
     private playerController?: PlayerController;
     private obstacles!: ObstaclesController;
     private slugControllers: SlugController[] = [];
-    
+    private purpleDevilControllers: PurpleDevilController[] = [];
+
 	constructor()
 	{
 		super('game')
@@ -55,7 +57,7 @@ export default class Game extends Phaser.Scene
                         .setData('type', 'player')
                         .setScale(0.50)
                         .setFixedRotation();            
-                    this.playerController = new PlayerController(this, this.playerSprite, this.cursors);        
+                    this.playerController = new PlayerController(this, this.playerSprite, this.cursors, this.obstacles);        
                     this.cameras.main.startFollow(this.playerSprite, true);
                     break;                    
                 }
@@ -71,6 +73,12 @@ export default class Game extends Phaser.Scene
                 }
                 case 'purpledevil':
                 {
+                    const purpledevil = this.matter.add.sprite(x + (width * 0.5), y + (width * 0.5), 'purpledevil')
+                        .setData('type', 'purpledevil')
+                        .setScale(0.33)
+                        .setFixedRotation();
+                    this.purpleDevilControllers.push(new PurpleDevilController(this, purpledevil));
+                    this.obstacles.add('purpledevil', purpledevil.body as MatterJS.BodyType);
                     break;
                 }
             }
@@ -83,5 +91,15 @@ export default class Game extends Phaser.Scene
         {
             this.playerController.update(deltaTime);
         }
+
+        this.slugControllers.forEach(slug => 
+        {
+            slug.update(deltaTime);
+        });      
+        
+        this.purpleDevilControllers.forEach(devil => 
+        {
+            devil.update(deltaTime);
+        });      
     }
 }

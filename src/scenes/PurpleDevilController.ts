@@ -2,12 +2,12 @@ import Phaser from 'phaser';
 import StateMachine from '../statemachine/StateMachine';
 import {sharedInstance as events} from'./EventCenter';
 
-export default class SlugController 
+export default class PurpleDevilController 
 {
     private sprite: Phaser.Physics.Matter.Sprite;
     private stateMachine: StateMachine;
     private moveTime: number = 0;
-    private speed: number = 2;
+    private speed: number = 3;
     private scene: Phaser.Scene
 
     constructor(scene: Phaser.Scene, sprite: Phaser.Physics.Matter.Sprite)
@@ -17,7 +17,7 @@ export default class SlugController
         
         this.createAnimations();
 
-        this.stateMachine = new StateMachine(this, 'slug');
+        this.stateMachine = new StateMachine(this, 'purpledevil');
         this.stateMachine
             .addState('idle', {
                 onEnter: this.idleOnEnter
@@ -33,12 +33,12 @@ export default class SlugController
             .addState('dead')
             .setState('idle');  
 
-        events.on('slug-stomped', this.handleStomped, this)     
+        events.on('purpledevil-stomped', this.handleStomped, this)     
     }
                
     destroy()
     {
-        events.off('slug-stomped', this.handleStomped, this)       
+        events.off('purpledevil-stomped', this.handleStomped, this)       
     }
    
     update(deltaTime: number)
@@ -49,30 +49,36 @@ export default class SlugController
     private createAnimations()
     {
         this.sprite.anims.create({
-            key: 'slug-idle',
-            frames: [{ key: 'slug', frame: 'slug_2.png' }],
-            repeat: 1
-        });
-
-        this.sprite.anims.create({
-            key: 'slug-walk-left',
+            key: 'purpledevil-idle',
             frameRate: 5,
-            frames: this.sprite.anims.generateFrameNames('slug', {
+            frames: this.sprite.anims.generateFrameNames('purpledevil', {
                 start: 1, 
                 end: 3,
-                prefix: 'slug_',
+                prefix: 'monster02_idle_',
                 suffix: '.png'
             }),
             repeat: -1
         });
 
         this.sprite.anims.create({
-            key: 'slug-walk-right',
+            key: 'purpledevil-walk-left',
             frameRate: 5,
-            frames: this.sprite.anims.generateFrameNames('slug', {
+            frames: this.sprite.anims.generateFrameNames('purpledevil', {
                 start: 1, 
-                end: 3,
-                prefix: 'slug_',
+                end: 2,
+                prefix: 'monster02_walk_left_',
+                suffix: '.png'
+            }),
+            repeat: -1
+        });
+
+        this.sprite.anims.create({
+            key: 'purpledevil-walk-right',
+            frameRate: 5,
+            frames: this.sprite.anims.generateFrameNames('purpledevil', {
+                start: 1, 
+                end: 2,
+                prefix: 'monster02_walk_right_',
                 suffix: '.png'
             }),
             repeat: -1
@@ -81,7 +87,7 @@ export default class SlugController
 
     private idleOnEnter()
     {
-        this.sprite.play('slug-idle');
+        this.sprite.play('purpledevil-idle');
 
         const random = Phaser.Math.Between(1, 100);
         if (random < 50)
@@ -96,7 +102,7 @@ export default class SlugController
 
     private moveLeftOnEnter()
     {
-        this.sprite.play('slug-walk-left');
+        this.sprite.play('purpledevil-walk-left');
         this.moveTime = 0;
     }
 
@@ -111,27 +117,27 @@ export default class SlugController
 
     private moveRightOnEnter()
     {
-        this.sprite.play('slug-walk-right');
+        this.sprite.play('purpledevil-walk-right');
         this.moveTime = 0;
     }
 
     private moveRightOnUpdate(deltaTime: number)
     {
-        this.sprite.setVelocityX(this.speed / 2);
+        this.sprite.setVelocityX(this.speed);
         this.moveTime += deltaTime;
-        if (this.moveTime > 2000 * 2) {
+        if (this.moveTime > 2000) {
             this.stateMachine.setState('move-left');
         }        
     }
 
-    private handleStomped(slug: Phaser.Physics.Matter.Sprite)
+    private handleStomped(purpledevil: Phaser.Physics.Matter.Sprite)
     {
-        if (this.sprite !== slug)
+        if (this.sprite !== purpledevil)
         {
             return;
         }
 
-        events.off('slug-stomped', this.handleStomped, this);
+        events.off('snoman-stomped', this.handleStomped, this);
 
         this.scene.tweens.add({
             targets: this.sprite,

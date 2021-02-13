@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="128" tileheight="128" infinite="0" nextlayerid="3" nextobjectid="4">
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="128" tileheight="128" infinite="0" nextlayerid="3" nextobjectid="6">
+ <editorsettings>
+  <export target="graveyard-map.json" format="json"/>
+ </editorsettings>
  <tileset firstgid="1" name="graveyard-spritesheet" tilewidth="128" tileheight="128" tilecount="16" columns="16">
   <image source="graveyard-spritesheet.png" width="2048" height="128"/>
   <tile id="0">
@@ -98,16 +101,18 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,16,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,16,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,16,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,2,2,7,0,0,0,0,
 2,2,2,2,0,14,15,16,0,0,14,15,16,0,0,14,15,16,0,0,0,0,15,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,7,5,5,5,5,11,2,2,2,
 5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,0,0,0,0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-5,5,5,5,16,0,14,15,15,15,15,15,15,15,15,15,15,15,15,0,0,0,0,0,14,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+9,9,9,9,16,0,14,15,15,15,15,15,15,15,15,15,15,15,15,0,0,0,0,0,14,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
 </data>
  </layer>
  <objectgroup id="2" name="objects">
   <object id="1" name="purpledevil" x="1404" y="1404" width="128" height="128"/>
-  <object id="2" name="player" x="128" y="1398" width="128" height="128"/>
-  <object id="3" name="slug" x="768" y="1406" width="128" height="128"/>
+  <object id="2" name="player" x="130" y="1400" width="128" height="128"/>
+  <object id="3" name="slug" x="3718" y="1408" width="128" height="128"/>
+  <object id="4" name="slug" x="814" y="1402" width="128" height="128"/>
+  <object id="5" name="purpledevil" x="4606" y="1410" width="128" height="128"/>
  </objectgroup>
 </map>
