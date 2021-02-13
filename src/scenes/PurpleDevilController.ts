@@ -1,6 +1,5 @@
 import Phaser from 'phaser';
 import StateMachine from '../statemachine/StateMachine';
-import {sharedInstance as events} from'./EventCenter';
 
 export default class PurpleDevilController 
 {
@@ -8,11 +7,9 @@ export default class PurpleDevilController
     private stateMachine: StateMachine;
     private moveTime: number = 0;
     private speed: number = 3;
-    private scene: Phaser.Scene
 
     constructor(scene: Phaser.Scene, sprite: Phaser.Physics.Matter.Sprite)
     {
-        this.scene = scene;
         this.sprite = sprite;
         
         this.createAnimations();
@@ -30,15 +27,7 @@ export default class PurpleDevilController
                 onEnter: this.moveRightOnEnter,
                 onUpdate: this.moveRightOnUpdate
             })
-            .addState('dead')
-            .setState('idle');  
-
-        events.on('purpledevil-stomped', this.handleStomped, this)     
-    }
-               
-    destroy()
-    {
-        events.off('purpledevil-stomped', this.handleStomped, this)       
+            .setState('idle');     
     }
    
     update(deltaTime: number)
@@ -128,27 +117,5 @@ export default class PurpleDevilController
         if (this.moveTime > 2000) {
             this.stateMachine.setState('move-left');
         }        
-    }
-
-    private handleStomped(purpledevil: Phaser.Physics.Matter.Sprite)
-    {
-        if (this.sprite !== purpledevil)
-        {
-            return;
-        }
-
-        events.off('snoman-stomped', this.handleStomped, this);
-
-        this.scene.tweens.add({
-            targets: this.sprite,
-            displayHeight: 0,
-            y: this.sprite.y + (this.sprite.displayHeight * 0.5),
-            duration: 200,
-            onComplete: () => {
-                this.sprite.destroy
-            }
-        });
-
-        this.stateMachine.setState('dead');
     }
 }

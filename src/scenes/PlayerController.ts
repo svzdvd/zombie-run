@@ -17,8 +17,7 @@ export default class PlayerController
     private stompJumpSpeed: number = 7;
     private health: number = 100;
 
-    private lastSlug?: Phaser.Physics.Matter.Sprite;
-    private lastPurpleDevil?: Phaser.Physics.Matter.Sprite;
+    private lastEnemy?: Phaser.Physics.Matter.Sprite;
 
     constructor(scene: Phaser.Scene, sprite: Phaser.Physics.Matter.Sprite, cursors: CursorKeys, obstacles: ObstaclesController)
     {
@@ -45,12 +44,12 @@ export default class PlayerController
                 onEnter: this.jumpOnEnter,
                 onUpdate: this.jumpOnUpdate
             })
-            .addState('slug-hit', {
-                onEnter: this.slugHitOnEnter
+            .addState('enemy-hit', {
+                onEnter: this.enemyHitOnEnter
             })
             .addState('slug-stomp', {
                 onEnter: this.slugStompOnEnter
-            })            
+            })
             .setState('idle');
 
         this.sprite.setOnCollide((data: MatterJS.ICollisionPair) => {
@@ -66,21 +65,26 @@ export default class PlayerController
             
             if (this.obstacles.has('slug', body))
             {
-                this.lastSlug = body.gameObject;
+                this.lastEnemy = body.gameObject;
 
-                console.log('velocityy: ' + playerBody.velocity.y);
-                if (playerBody.velocity.y > 1) 
+                console.log('VelocityY: ' + playerBody.velocity.y);
+                if (playerBody.velocity.y > 2) 
                 {
-                    // stomp on slug
                     this.stateMachine.setState('slug-stomp')
                 }
                 else 
                 {
-                    // hit by slug
-                    this.stateMachine.setState('slug-hit');
+                    this.stateMachine.setState('enemy-hit');
                 }
                 return;
-            }        
+            }
+            else if (this.obstacles.has('purpledevil', body))
+            {
+                console.log('devil hit!');
+                this.lastEnemy = body.gameObject;
+                this.stateMachine.setState('enemy-hit');
+                return;
+            }   
 
             const gameObject = body.gameObject;
             if (!gameObject) 
@@ -172,12 +176,16 @@ export default class PlayerController
         }
     }
 
-    private slugHitOnEnter()
+    private enemyHitOnEnter()
     {
-        if (this.lastSlug)
+        if (this.lastEnemy)
         {
-            // TODO improve (check if penguin velocity is going down?)
-            if (this.sprite.x < this.lastSlug.x)
+            console.log('enemyHitOnEnter velocityY: ' + this.sprite.body.velocity.y);
+            if (this.sprite.body.velocity.y > 2) {
+                this.sprite.setVelocityY(this.sprite.body.velocity.y * -1);
+            }
+
+            if (this.sprite.x < this.lastEnemy.x)
             {
                 this.sprite.setVelocityX(-this.speed / 2);
             }
@@ -216,7 +224,7 @@ export default class PlayerController
     private slugStompOnEnter()
     {
         this.sprite.setVelocityY(-this.stompJumpSpeed)
-        events.emit('slug-stomped', this.lastSlug)
+        events.emit('slug-stomped', this.lastEnemy)
         this.stateMachine.setState('idle')
     }
 
